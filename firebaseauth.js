@@ -4,13 +4,7 @@
  import{getFirestore, setDoc, doc} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js"
  
  const firebaseConfig = {
-    apiKey: "AIzaSyAKttRWq4B9h5-pPRCgLIdcdJ23ZUloxZQ",
-   authDomain: "banquethub-a389a.firebaseapp.com",
-   projectId: "banquethub-a389a",
-   storageBucket: "banquethub-a389a.appspot.com",
-   messagingSenderId: "88688959054",
-   appId: "1:88688959054:web:f15ccfa9046cdc62d56d1f",
-   measurementId: "G-STJLP3HGEB"
+   
 
  };
 
