@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <style>
+        body{
+            padding:30px;
+            background:linear-gradient(to right, #e2e2e2, #a96c37);
+        }
+        h1{
+            text-align:center;
+            font-family: 'Montserrat', sans-serif;
+
+        }
+        button{
+            color:rgb(255, 255, 255);
+            background-color:#fa7900;
+            padding:5px;
+            border-radius:5px;
+            font-size:1rem;
+            font-weight:bold;
+            border:none;
+        }
+        button:hover{
+            background: #e55335;
+            box-shadow: 0 0 15px #e55335;
+           
+        }
+        button, div{
+            margin-left:15%;
+            font-size:20px;
+            padding:10px;
+        }
+        div{
+            font-weight:400;
+            color:rgb(12,11,11);
+            font-family: 'Montserrat', sans-serif;
+
+        }
+        span{
+            font-weight:600;
+            font-size:22px;
+            color:black;
+            
+        }
+    </style>
+    <script type="module" src="./homepage.js"></script>
+</head>
+<body>
+  
+    <h1>Bienvenido a BanquetHub</h1>
+    
+    <img src="img/avatar.webp" width="150" height="150" alt="avatar" style="border-radius: 50%;">
+    <div><span id="loggedUserFName"></span></div>
+    <div><span id="loggedUserLName"></span></div>
+    <div>Correo: <span id="loggedUserEmail"></span></div>
+    <button id="logout">Cerrar Sesion</button>
+</body>
+</html>
