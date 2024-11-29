@@ -1,0 +1,146 @@
+logo{
+    width: 200; height: auto; 
+    
+   }
+   .logo:hover{
+       transform: scale(1.2) rotate(5deg); 
+       transition: transform 0.3s ease; 
+      
+   }
+
+   .MenuButtons {
+    min-width: 700px;
+    display: flex;
+    justify-content: center;
+    
+    }
+    
+    .MenuButtons button{
+        /*background-color: #ff6347; */
+        background-color: transparent;
+        color: #ff6347; /* Color del texto */
+        border: none;
+        padding: 10px 15px; /* Espaciado */
+        text-align: center; /* Alineación del texto */
+        text-decoration: none; /* Sin subrayado */
+        display: inline-block; /* Para aplicar padding y otros estilos */
+        font-size: 16px; /* Tamaño del texto */
+        margin: 4px 2px; /* Espaciado alrededor */
+        cursor: pointer; /* Cursor de mano */
+        border-radius: 12px; /* Bordes redondeados */
+       
+    }
+    .MenuButtons a{
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: none; /* Elimina el subrayado */
+    }
+    .MenuButtons button:hover{
+      background-color: #e55335; 
+      transform: translateY(-5px);
+      transition: 0.5s;
+      box-shadow: 0 0 20px #e55335;
+      color:white;
+    }
+
+    .navbar {
+        width: 100%; /* Asegura que ocupe todo el ancho */
+        position: static;
+        z-index: 10;  /* Mantiene la navbar por encima del contenido */
+        padding: 10px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #24303c; /* Fondo opaco */
+       
+     
+    }
+ 
+    
+    
+    .navbar .logo img {
+        height: 85px;
+        width: 110px;;
+    }
+    
+    .nav-links {
+        list-style: none;
+        display:flexbox
+    }
+    
+    .nav-links li {
+        margin: 0 15px;
+    }
+    
+    .nav-links li a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.2em;
+        transition: color 0.3s ease;
+    }
+    
+    .nav-links li a:hover {
+        color: #ff6347; 
+    }
+    
+    
+    .MenuButtons a{
+        color: white;
+    }
+    .btn-login {
+        /*background-color: #ff6347; */
+        background-color: transparent;
+        color: #ff6347; 
+        border: none;
+        padding: 10px 15px; 
+        text-align: center; 
+        text-decoration: none; 
+        display: inline-block; 
+        font-size: 16px; 
+        margin: 4px 2px; 
+        cursor: pointer; 
+        border-radius: 12px; 
+ }
+ 
+ 
+ .btn-login:hover {
+     background-color: #e55335; 
+     transform: translateY(-5px);
+     transition: 0.5s;
+     box-shadow: 0 0 20px #e55335;
+     color:white;
+   
+ }
+
+
+/*perfilnav*/
+#profile-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#profileImageNav {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+
+
+#profileNameNav {
+    font-size: 1.1rem;
+    color: white;
+    font-weight: bold;
+}
+
+#profileNameNav:hover{
+    color: #e55335;
+    
+   
+}
+
+.userview::hover{
+    color: #e55335;
+   
+}

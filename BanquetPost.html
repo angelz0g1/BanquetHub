@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicaciones de BanquetHub</title>
+    <link rel="stylesheet" href="BanquetPost.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <h1 class="oven-smoke-text">BanquetPost</h1>
+    </div>
+ <!-- Botones originales -->
+ <div class="menu-container">
+    <button id="menuButton" class="menu-button">
+        <i class="fa-solid fa-bars"></i> <!-- Ícono de menú -->
+    </button>
+    <div id="menuDropdown" class="menu-dropdown">
+        <button id="logout"><i class="fa-solid fa-right-from-bracket fa-flip-horizontal"></i> Cerrar Sesión</button>
+        <button id="goToHome"><i class="fa-solid fa-house"></i> Inicio</button>
+        <button onclick="window.location.href='Compra.html'"><i class="fa-solid fa-shop"></i> Compra</button>
+        <button onclick="window.location.href='recetas.html'"><i class="fa-solid fa-book"></i> Recetas</button>
+        <button onclick="window.location.href='homepage.html'"> <i class="fa-regular fa-user"> </i> Perfil</button>
+        <button onclick="window.location.href='Ordenes.html'"><i class="fa-solid fa-list"></i> Ordenes</button>
+    </div>
+</div>
+
+
+
+    <div id="postsContainer" class="posts-container">
+        <!-- Las publicaciones se insertarán aquí dinámicamente -->
+    </div>
+    <script type="module" src="BanquetPost.js"></script>
+</body>
+</html>

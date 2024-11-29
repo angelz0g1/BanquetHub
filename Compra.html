@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú - BanquetHub</title>
+    
+    <link rel="stylesheet" href="compra.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/Logo.png" width="200" height="150" alt="Logo BanquetHub">
+            </a>
+        </div>
+        <section class="MenuButtons">
+            <button class="fa-solid fa-phone"><a href="#contact"> Contactanos</a></button>
+        
+            <a href="login.html" id="loginBtn" class="btn-login"><i class="fa-regular fa-user" style="color: #ff6600;"></i> Iniciar Sesion</a>
+            <div id="profile-section" style="display: none;">
+                <img id="profileImageNav" src="default-avatar.jpg" width="50" height="50" alt="Foto de Perfil" style="border-radius: 50%;">
+                <a href="homepage.html"> <span id="profileNameNav">Usuario</span></a>
+                <button id="logoutBtn" class="btn-login"><i class="fa-solid fa-right-from-bracket fa-flip-horizontal fa-lg"></i> Cerrar Sesion</button>
+            </div>
+        </section>
+    </nav>
+</header>
+<body>
+    <h1>Menú de Opciones</h1>
+
+    <!-- Sección de Entradas -->
+    <section class="menu-category">
+        <h2>Platillos de Entrada</h2>
+        <div id="entradaSection" class="gallery-section">
+            <!-- Platillos de entrada se insertarán aquí dinámicamente -->
+        </div>
+    </section>
+
+    <!-- Sección de Platos Fuertes -->
+    <section class="menu-category">
+        <h2>Plato Fuerte</h2>
+        <div id="platoFuerteSection" class="gallery-section">
+            <!-- Platos fuertes se insertarán aquí dinámicamente -->
+        </div>
+    </section>
+
+    <!-- Sección de Postres -->
+    <section class="menu-category">
+        <h2>Postres</h2>
+        <div id="postreSection" class="gallery-section">
+            <!-- Postres se insertarán aquí dinámicamente -->
+        </div>
+    </section>
+
+   <!-- Botón de carrito en la esquina superior derecha -->
+<button id="cartButton" class="cart-icon" aria-label="Ver Carrito">
+    <i class="fa-solid fa-cart-shopping fa-fade fa-sm"></i>
+</button>
+
+<!-- Sidebar del carrito -->
+<div id="cartSidebar" class="cart-sidebar">
+    <button id="closeSidebar" class="close-sidebar">&times;</button>
+    <h2>Carrito de Compras</h2>
+    <div id="cart">
+        <p>Tu carrito está vacío.</p>
+    </div>
+    <p>Total: <span id="total">0</span> MXN</p>
+    <button id="submitOrderBtn">Enviar Orden</button>
+</div>
+
+    <!-- Modal para detalles del platillo -->
+    <div id="dishModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="dishImage" src="" alt="Dish Image" style="width: 100%; height: auto; border-radius: 10px;">
+            <h2 id="dishName"></h2>
+            <p id="dishDescription"></p>
+            <div class="person-count">
+                <button onclick="decreasePeople()">-</button>
+                <span id="peopleCount">1</span> Personas
+                <button onclick="increasePeople()">+</button>
+            </div>
+            <p>Precio total: $<span id="dishTotalPrice"></span> MXN</p>
+            <button id="addToCartBtn">Agregar al Carrito</button>
+        </div>
+    </div>
+
+
+
+
+  <!-- Firebase App (compatibilidad con versiones no ES6) -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-app-compat.js"></script>
+  <!-- Firebase Firestore (compatibilidad con versiones no ES6) -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore-compat.js"></script>
+  <!-- Cargar el archivo JavaScript principal después de Firebase -->
+<script src="compra.js"></script>
+
+    <script>
+        // Al cargar la página, verifica si hay un usuario autenticado en localStorage
+        window.onload = function() {
+            const profileName = localStorage.getItem('profileName');
+            const profilePicture = localStorage.getItem('profilePicture');
+
+            if (profileName && profilePicture) {
+                // Ocultar el botón de iniciar sesión y mostrar el perfil del usuario
+                document.getElementById('loginBtn').style.display = 'none';
+                document.getElementById('profile-section').style.display = 'flex';
+                document.getElementById('profileNameNav').innerText = profileName;
+                document.getElementById('profileImageNav').src = profilePicture;
+            }
+        };
+
+        // Cerrar sesión
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            localStorage.removeItem('loggedInUserId');
+            localStorage.removeItem('profileName');
+            localStorage.removeItem('profilePicture');
+            window.location.href = 'login.html';  // Redirigir a la página de inicio de sesión
+        });
+    </script>
+
+
+</body>
+
+
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-section about">
+            <h3>BanquetHub</h3>
+            <p>La solución perfecta para planificar tus eventos de manera sencilla y personalizada. Crea menús, calcula costos y organiza el banquete ideal.</p>
+        </div>
+
+        <div class="footer-section links">
+            <h3>Enlaces útiles</h3>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Sobre nosotros</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Contáctanos</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section contact">
+            <h3>Contáctanos</h3>
+            <p><i class="fas fa-phone"></i> +52 123 456 7890</p>
+            <p><i class="fas fa-envelope"></i> info@banquethub.com</p>
+            <div class="socials">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-x-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2024 BanquetHub | Todos los derechos reservados
+    </div>
+</footer>
+</html>

@@ -1,0 +1,650 @@
+/*No bordes*/
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*Header/Navbar*/
+/*
+header {
+    padding: 1em;
+    text-align: center;
+   
+    background-size: cover;
+    background-position: fixed;
+    color: rgb(255, 255, 255);
+   
+    border-radius: 12px;
+    padding: 5px;
+  }  
+*/
+
+h1{
+font-family: bradley hand;
+}
+
+/* Efecto de aparición estilo horno para el logo */
+.logo {
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px); /* Aparece desde abajo */
+    animation: ovenAppear 2s ease forwards;
+}
+
+/* Efecto de humo */
+.logo::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px); /* Comienza desde el logo */
+    width: 120%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(224, 224, 224, 0.3), rgba(224, 224, 224, 0));
+    opacity: 0;
+    filter: blur(8px);
+    animation: smoke 3s ease-in-out 1s forwards; /* Humo aparece tras el efecto de horno */
+}
+
+/* Animación de aparición estilo horno */
+@keyframes ovenAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación de humo */
+@keyframes smoke {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(1); /* Empieza justo sobre el logo */
+    }
+    50% {
+        opacity: 0.3;
+        transform: translateY(-10px) scale(1.1); /* Humo se eleva y expande un poco */
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-30px) scale(1.2); /* Humo se desvanece mientras sube */
+    }
+}
+/*
+.logo:hover{
+    transform: scale(1.2) rotate(5deg); 
+    transition: transform 0.3s ease; 
+   
+}
+*/
+.MenuButtons {
+min-width: 700px;
+display: flex;
+justify-content: center;
+
+}
+
+.MenuButtons button{
+    /*background-color: #ff6347; */
+    background-color: transparent;
+    color: #ff6347; /* Color del texto */
+    border: none;
+    padding: 10px 15px; /* Espaciado */
+    text-align: center; /* Alineación del texto */
+    text-decoration: none; /* Sin subrayado */
+    display: inline-block; /* Para aplicar padding y otros estilos */
+    font-size: 16px; /* Tamaño del texto */
+    margin: 4px 2px; /* Espaciado alrededor */
+    cursor: pointer; /* Cursor de mano */
+    border-radius: 12px; /* Bordes redondeados */
+   
+}
+.MenuButtons a{
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none; /* Elimina el subrayado */
+}
+.MenuButtons button:hover{
+  background-color: #e55335; 
+  transform: translateY(-5px);
+  transition: 0.5s;
+  box-shadow: 0 0 20px #e55335;
+  color:white;
+
+}
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/mainbackground.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Fondo fijo pero se desplaza */
+
+}
+
+
+/*2do item*/
+.hero {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    border-radius: 8px;
+    background: transparent; /* Asegúrate de que el fondo esté transparente */
+}
+
+
+.hero h1 {
+    font-size: 3em;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 0.5em;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 1.5em;
+}
+/* Animacion HERO */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Aparece desde abajo */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Posición final */
+    }
+}
+
+/* Aplica la animación al texto */
+.hero h1, .hero p {
+    opacity: 0; /* Comienza invisible */
+    animation: fadeInUp 1s ease forwards; /* Duración y suavidad */
+}
+
+/* Retardo para que no entren al mismo tiempo */
+.hero h1 {
+    animation-delay: 0.5s;
+}
+
+.hero p {
+    animation-delay: 1s;
+}
+
+/*Botones*/
+
+.cta-button {
+    transition: all 0.3s ease-in-out;
+    font-family: "Dosis", sans-serif;
+
+}
+
+.cta-button {
+    width: 200px;
+  height: 60px;
+  border-radius: 50px;
+  background-image: linear-gradient(135deg, #ff6347 0%, #df7e1d 100%);
+  box-shadow: 0 20px 30px -6px rgba(238, 103, 97, 0.5);
+  outline: none;
+  cursor: pointer;
+  border: none;
+  font-size: 24px;
+  color: white;
+    
+    
+}
+
+.cta-button:hover {
+    transform: translateY(3px);
+    box-shadow: none;
+  
+}
+.cta-button:active{
+    opacity: 0.5;
+
+}
+/*Servicios*/
+.services {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 0;
+    background-color: #f7f7f7;
+}
+
+.service-item {
+    text-align: center;
+    max-width: 300px;
+}
+
+.service-item i {
+    font-size: 2.5em;
+    color: #ff6347;
+    margin-bottom: 15px;
+}
+
+.service-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.service-item p {
+    font-size: 1em;
+    color: #666;
+
+}
+
+/*Testimonios*/
+
+.testimonials {
+    position: relative; /* Necesario para que el pseudo-elemento se posicione dentro */
+    color: rgb(255, 255, 255); /* Color del texto */
+    text-align: center;
+    padding: 150px;
+    overflow: hidden; /* Para asegurarnos de que el pseudo-elemento no se salga del contenedor */
+}
+
+.testimonials::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Extiende el ancho más allá del contenedor */
+    height: 100%; /* Extiende el alto más allá del contenedor */
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px); /* Aplica el desenfoque */
+    z-index: -1; /* Asegura que la imagen esté detrás del texto */
+    transition: background-image 0.5s ease;
+    background-image: var(--bg-image); /* Imagen dinámica */
+    transform: scale(1.1); /*Escala la imagen ligeramente para evitar que se encoja */
+}
+
+/* Mantén estos estilos para el texto */
+.testimonial-item p {
+    font-size: 1.5em;
+    font-style: italic;
+    margin-bottom: 20px;
+    position: relative; /* Asegura que esté sobre la imagen de fondo */
+    z-index: 1;
+}
+
+.testimonial-item h4 {
+    font-size: 1.2em;
+    color: #ff6347;
+    position: relative;
+    z-index: 1;
+}
+
+
+/*Galeria de Platillos*/
+.gallery {
+    padding: 50px 0;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+.gallery h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #24303c;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.gallery h2:hover{
+    transition: 1s;
+    transform: translateY(-7px)
+    
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0 50px;
+}
+
+.gallery-item {
+    position: relative;
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item p {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.gallery-item:hover p{
+    transition: 1s;
+    transform: translateY(7px)
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05); 
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.1);
+
+}
+
+
+/*Footer*/
+footer {
+    background-color: #24303c; 
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 50px;
+}
+
+.footer-section {
+    flex-basis: 30%;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #ff6347; 
+}
+
+.footer-section p, .footer-section ul, .footer-section a {
+    color: #bbb; /* Color de texto más suave */
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 10px 0;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #bbb;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #ff6347;
+}
+
+.socials a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #bbb;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+.socials a:hover {
+    color: #ff6347;
+  
+}
+
+.footer-bottom {
+    background-color: #1e282f;
+    padding: 10px 0;
+    font-size: 0.9em;
+    margin-top: 20px;
+    color: #aaa;
+}
+
+
+/*navbar*/
+.navbar {
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    position: fixed;
+    top: 0;
+    left: 0; /* Empieza desde la izquierda de la pantalla */
+    z-index: 10;
+    background-size: cover;
+    background-position: center;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent; 
+    transition: background-color 0.5s ease; 
+   /* border-radius: 7px;*/
+}
+
+.navbar.scrolled {
+    background-color: #24303c; /* Fondo opaco */
+ 
+    
+}
+
+
+.navbar .logo img {
+    height: 85px;
+    width: 110px;;
+}
+
+.nav-links {
+    list-style: none;
+    display:flexbox
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #ff6347; 
+}
+
+
+.MenuButtons a{
+    color: white;
+}
+/* Adaptación a móviles */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 100vh;
+        top: 0px;
+        background-color: #24303c;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .nav-active {
+        transform: translateX(0%);
+    }
+    
+ 
+}
+
+.btn-login{
+       /*background-color: #ff6347; */
+       background-color: transparent;
+       color: #ffffff; 
+       border: none;
+       padding: 10px 15px; 
+       text-align: center; 
+       text-decoration: none; 
+       display: inline-block; 
+       font-size: 16px; 
+       margin: 4px 2px; 
+       cursor: pointer; 
+       border-radius: 12px; 
+       
+}
+
+
+.btn-login:hover {
+    background-color: #e55335; 
+    transform: translateY(-5px);
+    transition: 0.5s;
+    box-shadow: 0 0 20px #e55335;
+    color:white;
+  
+}
+
+/* Estilo para la sección del perfil en el navbar */
+#profile-section {
+    display: flex;                /* Flexbox para alinear la imagen y el nombre */
+    align-items: center;           /* Centra la imagen y el nombre verticalmente */
+    gap: 10px;                     /* Espacio entre la imagen y el nombre */
+}
+
+#profileImageNav {
+    border-radius: 50%;            /* Hace la imagen circular */
+    width: 35px;                   /* Ajusta el tamaño de la imagen */
+    height: 35px;                  /* Asegúrate de que la imagen sea cuadrada */
+    object-fit: cover;             /* Asegura que la imagen se recorte bien dentro del contenedor */
+}
+
+
+#profileNameNav {
+    font-size: 1em;             /* Ajusta el tamaño de la fuente */
+    color: white;                  /* Color del texto del nombre */
+    font-weight: bold;             /* Hacer el nombre en negrita */
+    font-family: Arial, sans-serif; /* Elegir una fuente clara */
+}
+#profileNameNav:hover{
+    color: #e55335;
+}
+
+.userview::hover{
+    color: #e55335;
+}
+
+
+
+/* Estilos del modal */
+.modal {
+    display: none; /* Ocultar por defecto */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+   
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    perspective: 1000px;
+    box-shadow: 0 0 0 5px #ffffff80;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .card:hover .card__image {
+    transform: scale(1.1);
+  }
+  
+  .card__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: rgba(242, 242, 242, 0.9);
+    transform: rotateX(-90deg);
+    transform-origin: bottom;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .card:hover .card__content {
+    transform: rotateX(0deg);
+  }
+  
+  .card__title {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+    font-weight: 700;
+  }
+  
+  .card__description {
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: #777;
+    line-height: 1.4;
+  }

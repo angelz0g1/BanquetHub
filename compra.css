@@ -1,0 +1,488 @@
+body {
+    background: linear-gradient(to bottom, #ffffff, #dcdcdc);
+    opacity: 0;
+    animation: fadeInt 1s ease-in-out forwards;
+    
+}
+@keyframes fadeInt {
+    to {
+        opacity: 1;
+    }
+}
+
+
+* { 
+    margin: 0;
+   
+    box-sizing: border-box;
+}
+ 
+  .logo{
+    width: 200; height: auto; 
+    
+   }
+   .logo:hover{
+       transform: scale(1.2) rotate(5deg); 
+       transition: transform 0.3s ease; 
+      
+   }
+   h1{
+    font-family: bradley hand;
+    color: #e55335;
+    animation: fadeIn 3s ease-in-out;
+   }
+   @keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+   h2{
+    font-family: Arial, Helvetica, sans-serif;
+   }
+
+
+   .MenuButtons {
+    min-width: 700px;
+    display: flex;
+    justify-content: center;
+    
+    }
+    
+    .MenuButtons button{
+        /*background-color: #ff6347; */
+        background-color: transparent;
+        color: #ff6347; /* Color del texto */
+        border: none;
+        padding: 10px 15px; /* Espaciado */
+        text-align: center; /* Alineación del texto */
+        text-decoration: none; /* Sin subrayado */
+        display: inline-block; /* Para aplicar padding y otros estilos */
+        font-size: 16px; /* Tamaño del texto */
+        margin: 4px 2px; /* Espaciado alrededor */
+        cursor: pointer; /* Cursor de mano */
+        border-radius: 12px; /* Bordes redondeados */
+       
+    }
+    .MenuButtons a{
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: none; /* Elimina el subrayado */
+    }
+    .MenuButtons button:hover{
+      background-color: #e55335; 
+      transform: translateY(-5px);
+      transition: 0.5s;
+      box-shadow: 0 0 20px #e55335;
+      color:white;
+    }
+
+    .navbar {
+        width: 100%; /* Asegura que ocupe todo el ancho */
+        position: static;
+        z-index: 10;  /* Mantiene la navbar por encima del contenido */
+        padding: 10px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #24303c; /* Fondo opaco */
+       
+     
+    }
+ 
+    
+    
+    .navbar .logo img {
+        height: 85px;
+        width: 110px;;
+    }
+    
+    .nav-links {
+        list-style: none;
+        display:flexbox
+    }
+    
+    .nav-links li {
+        margin: 0 15px;
+    }
+    
+    .nav-links li a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.2em;
+        transition: color 0.3s ease;
+    }
+    
+    .nav-links li a:hover {
+        color: #ff6347; 
+    }
+    
+    
+    .MenuButtons a{
+        color: white;
+    }
+    .btn-login {
+        /*background-color: #ff6347; */
+        background-color: transparent;
+        color: #ff6347; 
+        border: none;
+        padding: 10px 15px; 
+        text-align: center; 
+        text-decoration: none; 
+        display: inline-block; 
+        font-size: 16px; 
+        margin: 4px 2px; 
+        cursor: pointer; 
+        border-radius: 12px; 
+ }
+ 
+ 
+ .btn-login:hover {
+     background-color: #e55335; 
+     transform: translateY(-5px);
+     transition: 0.5s;
+     box-shadow: 0 0 20px #e55335;
+     color:white;
+   
+ }
+ 
+/* Gallery Item Style */
+.gallery-item {
+    display: inline-block;
+    margin: 15px;
+    cursor: pointer;
+}
+.gallery-item img {
+    width: 200px;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+ 
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    /*filter: grayscale(0.5);*/
+    transition: filter 0.3s, border-color 0.3s, transform 0.3s ease;
+    
+}
+.gallery-item img:hover {
+    transform: scale(1.1) rotate(2deg);
+    filter: brightness(1.2);
+   /* filter: grayscale(0);*/
+    border-color: #e55335;
+
+}
+
+
+
+/* Modal Style */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-content img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 10px;
+
+}
+
+.close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+button {
+    background-color: #ff6347;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #e55335;
+}
+
+
+/*Footer*/
+footer {
+    background-color: #24303c; 
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 50px;
+}
+
+.footer-section {
+    flex-basis: 30%;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #ff6347; 
+}
+
+.footer-section p, .footer-section ul, .footer-section a {
+    color: #bbb; /* Color de texto más suave */
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 10px 0;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #bbb;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #ff6347;
+}
+
+.socials a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #bbb;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+.socials a:hover {
+    color: #ff6347;
+  
+}
+
+.footer-bottom {
+    background-color: #1e282f;
+    padding: 10px 0;
+    font-size: 0.9em;
+    margin-top: 20px;
+    color: #aaa;
+}
+
+
+/*perfilnav*/
+#profile-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#profileImageNav {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+
+
+#profileNameNav {
+    font-size: 1.1rem;
+    color: white;
+    font-weight: bold;
+}
+
+#profileNameNav:hover{
+    color: #e55335;
+    
+   
+}
+
+.userview::hover{
+    color: #e55335;
+   
+}
+
+/* Estilos para el botón de carrito en la esquina superior derecha */
+#cartButton {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-image: linear-gradient(135deg, #ff6347 0%, #df7e1d 100%);
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1001; /* Asegura que el botón esté sobre otros elementos */
+}
+#carButton::hover{
+    background: #e55335;
+    transform: translateY(-5px);
+   transition: 0.5s;
+}
+/* Estilos del sidebar del carrito */
+.cart-sidebar {
+    position: fixed;
+    right: -300px; /* Oculto por defecto */
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #f7f7f7;
+    box-shadow: -5px 0 5px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    overflow-y: auto;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    border-radius: 12px;
+}
+
+.cart-sidebar.open {
+    right: 0; /* Aparece el sidebar */
+}
+
+.cart-sidebar h2 {
+    color: #e55335;
+    font-family: Arial, sans-serif;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+/* Botón de cierre en el sidebar */
+.close-sidebar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #032c6d;
+}
+
+#submitOrderBtn {
+    background-color: #e55335;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#submitOrderBtn:hover {
+    background-color: #ff6347;
+}
+/* Estilos para los encabezados de categorías en el sidebar del carrito */
+.cart-sidebar {
+    background: linear-gradient(180deg, #fff, #f7f7f7);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+}
+.cart-sidebar h3 {
+    font-family: 'Arial', sans-serif; /* Cambia la fuente a Arial, o la que prefieras */
+    font-size: 1.2em; /* Ajusta el tamaño de la fuente */
+    color: #e55335; /* Color de texto */
+    margin-top: 20px; /* Espaciado superior */
+    margin-bottom: 10px; /* Espaciado inferior */
+    font-weight: bold; /* Ajusta el grosor de la fuente */
+}
+
+
+/* Estilos para los nombres de los platillos en el sidebar del carrito */
+.cart-sidebar li {
+    font-family: 'Arial', sans-serif; /* Cambia a la fuente que prefieras */
+    font-size: 1em; /* Ajusta el tamaño de la fuente */
+    color: #333; /* Color de texto */
+    margin-bottom: 8px; /* Espaciado entre platillos */
+    line-height: 1.5; /* Espaciado de línea para mejorar legibilidad */
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+/* Clase para ocultar el botón del carrito */
+.hidden {
+    display: none !important; /* Asegúrate de que esta clase tenga prioridad */
+}
+/* Estilos para los nombres de los platillos en las secciones del menú */
+#entradaSection p,
+#platoFuerteSection p,
+#postreSection p {
+    font-family: 'Arial', sans-serif; /* Cambia a la fuente que prefieras */
+    font-size: 1.1em; /* Ajusta el tamaño de la fuente */
+    color: #333; /* Color del texto */
+    font-weight: 500; /* Grosor del texto */
+    margin-top: 5px; /* Espaciado superior */
+    margin-bottom: 10px; /* Espaciado inferior */
+    line-height: 1.4; /* Espaciado entre líneas */
+}
+
+.menu-category {
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+    
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+

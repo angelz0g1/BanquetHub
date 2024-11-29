@@ -1,0 +1,187 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('img/FondoBanquet6.png');
+}
+
+.header {
+    background-color: #24303c; 
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+.posts-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.post {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
+
+.post-text {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.post-image {
+    width: 100%;
+    border-radius: 8px;
+}
+/* Estilo para la información del usuario */
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.user-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-name {
+    font-weight: bold;
+    color: #555;
+}
+/*Animacion titulo*/
+.oven-smoke-text {
+    font-size: 2.5rem;
+    color: #d2691e; /* Color marrón claro */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    overflow: visible;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: ovenAppear 2s ease forwards;
+}
+
+/* Pseudo-elemento para el efecto de humo */
+.oven-smoke-text::after {
+    content: 'BanquetPost';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: rgba(224, 224, 224, 0.7); /* Color gris claro para el humo */
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(20px); /* Comienza desde el texto */
+    animation: smoke 3s ease-in-out 1s forwards; /* Aparece después del efecto de horno */
+}
+
+/* Animación de aparición estilo horno */
+@keyframes ovenAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+        color: #8b4513; /* Color marrón oscuro */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        color: #d2691e; /* Color caramelo claro */
+    }
+}
+
+/* Animación de humo flotante */
+@keyframes smoke {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(1); /* Aparece desde el texto */
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateY(-10px) scale(1.1); /* Humo se eleva y se expande */
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-30px) scale(1.2); /* Humo se desvanece y sube más */
+    }
+}
+
+/* Contenedor del botón de menú en la esquina superior derecha */
+.menu-container {
+    /*  position: absolute;*/
+    position: fixed; /* Fija el contenedor en su lugar */
+      top: 20px;       /* Ubicación desde la parte superior */
+      right: 20px;     /* Ubicación desde el borde derecho */
+      z-index: 1000;   /* Asegura que esté por encima de otros elementos */
+  }
+  
+  .menu-button {
+    background-color: #fa7900;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+    font-size: 1.2rem;
+    position: relative;
+    top: 80px; /* Ajusta el valor según sea necesario */
+}
+  
+  .menu-button:hover {
+      background-color: #e55335;
+      transform: translateY(-5px);
+      transition: 0.5s;
+  }
+  
+  /* Estilo del menú desplegable */
+  .menu-dropdown {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: #24303c;
+      color: white;
+      border-radius: 10px;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+      padding: 15px; /* Aumenta el espacio interno del contenedor */
+      width: 180px; /* Aumenta el ancho del menú */
+      z-index: 1;
+  }
+  
+  .menu-dropdown button {
+      background: none;
+      border: none;
+      color: #fa7900;
+      font-size: 1rem;
+      cursor: pointer;
+      padding: 12px 15px;
+      text-align: left;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      transition: background-color 0.3s;
+  }
+  
+  .menu-dropdown button:hover {
+      background-color: #e55335;
+      color: white;
+  }
